@@ -1,0 +1,160 @@
+<div id="port_holder" style="display: none;">{{port}}</div>
+<div id="cookie_holder" style="display: none;">{{history}}</div>
+<div id="traversal" class="cyto">
+</div>
+<br/>
+<div id="results_form" class="container" style="display: none; width: 1000px;">
+<table style="width: 100%">
+	<tr>
+	<td style="width: 33%">	
+		<h2><span class="badge badge-primary">View Options</span></h2>
+		<select id="view_select">
+			<option value="graph">Graphic Overview</option>
+			<option	value="JSON">Node List </option>
+			<option value="Traversal">Traversal Animation</option>
+		</select>
+	</td>
+	<td style="width: 33%">
+		<h3 style="color:white;" class="display-4">Results </h3>
+	</td>
+	<td style="width: 33%">
+		<button class="btn btn-outline-primary btn-block" id="reset_button"> START ANOTHER CRAWL </button>
+	</td>
+	</tr>
+</table>
+
+<br/>
+</div>
+<div id="search_form" class="container" style="border:solid white 2px">
+<h1 class="display-1 text-center" style="color: white;">Perseus Crawler </h1>
+<fieldset class="form-group">
+	<table>
+		<tr>
+			<td>
+				<br/>
+				<br/>
+				<h3><span class="badge badge-primary"> Starting URL </span> </h3>
+			</td>
+			<td>
+				<div class="container">
+				<br/>
+				<label id="u_feedback" style="display: none;" class="alert alert-danger">The starting URL is invalid.</label>
+				</div>
+			
+			</td>
+		</tr>
+	</table>
+				
+	<input class="form-control" id="starting_url"> </input>
+	<br/>
+	<h3><span class="badge badge-primary"> Keyword </span> </h3>
+	
+	<input class="form-control" id="keyword_field"> </input>
+	<table>
+	<tr>
+		<td>
+			<br/>
+	 		<h2><span class="badge badge-primary"> Search Type </span><br/>
+			<label class="badge badge-warning"> DFS 
+				<input id="DFS" type="radio" name="search_type" value="DFS">
+				<img id="dfs_icon" src="./images/unchecked.jpg">
+			</label>
+			<label class="badge badge-danger"> BFS 
+				<input id="BFS" type="radio" name="search_type" value="BFS">
+				<img id="bfs_icon" src="./images/unchecked.jpg">
+			</label></h2>
+			<br/>
+		</td>
+		<td>
+			<div class="container">
+			<br/>
+			<label id="s_feedback" style="display: none;" class="alert alert-danger">Select a search type, please. </label>
+			</div>
+		</td>
+	</tr>
+	</table>
+	<h3><span class="badge badge-primary">node limit</span>
+    <input id="limit_slider" type="range" min="1" max="15" step="1" list ="ticks" value="1">
+    <input readonly="readonly" style="width: 46px;"id="limit_value"value="1"></h3>
+   	<br/>
+	<button class="btn btn-outline-primary btn-lg btn-block" id="crawl_button"> START CRAWLING </button>
+	<div id="progdiv">
+	<br/>
+	<p id="progwords" style="color: white" > </p>
+	<div class="progress"><div id="progress_area" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div></div>
+	<datalist id="ticks">
+		<option value="1">
+		<option value="2">
+		<option value="3">
+		<option value="4">
+		<option value="5">
+		<option value="6">
+		<option value="7">
+		<option value="8">
+		<option value="9">
+		<option value="10">
+		<option value="11">
+		<option value="12">
+		<option value="13">
+		<option value="14">
+		<option value="15">
+	</datalist>
+	
+</fieldset>
+</div>
+
+<br/>
+<div id="history_area" class="container" style="display: none;">
+	<h3 class="display-4 text-center" style="color:white;">Search History </h3>
+	<table id="history_table" class="table fixed-bordered" cellpadding="12" cellspacing="6">
+		<tr class="shres">
+			<td class="shres"># </td>
+			<td class="wide" > Starting URL</td>
+			<td class="shres"> Keyword </td>
+			<td class="shres"> Search Type </td>
+			<td class="shres"> Limit </td>
+		</tr>
+	</table>
+</div>
+<div id="output_area" class="container" style="display: none;background-color: 0;">
+<table>
+<tr>
+<td>
+	<div id="svgContainer">
+		<button id="resetButton" style="border-radius: 70px; margin-top: 10px; margin-left: 10px; margin-bottom: 10px; border: solid black 1px; background: white; text-align: center;" >&#8634;</button>
+		<div id="titleBlowup"></div>
+		<div id="blowup"></div>
+		<svg id="svg" class="graph"></svg>
+		<div id="key">
+			 <div id="source"> Source URL</div>
+		    <div id="leaf"> Links Found</div>
+		    <div id="visited"> Visited Page</div>
+		    <div id="found"> Keyword Found</div>
+		</div>
+	</div>
+	<div id="node_list" class="container" style="display:none;">
+		<table id="node_table" class="table fixed-bordered" cellpadding="12" cellspacing="6">
+			<tr id="header_row" class="shres">
+				<td class="shres"> # </td>
+				<td class="wide">       URL       </td>
+				<td class="shres"> Parent Row</td>
+				<td class="shres">Children</td>
+			</tr>
+		</table>
+	</div>
+</tr>
+</table>
+</div>
+<script src="scripts/ajaxUtility.js"></script>
+<script src="scripts/home.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="scripts/graphics_DFS.js"></script>
+<script src="scripts/graphics_BFS.js"></script>
+<script src="scripts/cytoscape.js"></script>
+<script src="scripts/create_graph.js"></script>
+
+
+
+

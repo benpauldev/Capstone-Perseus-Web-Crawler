@@ -1,1 +1,7 @@
 # Capstone-Perseus-Web-Crawler
+Capstone Project for BS in Computer Science
+
+LINK:
+           http://ec2-54-148-189-221.us-west-2.compute.amazonaws.com:16000
+           
+This   project   is   a   single   page   web   application   that   allows   users   to   see   a   graphical   representation   of   the   internet   links from   a   user-defined,   starting   URL.   In   addition   to   the   starting   URL,   the   user   must   indicate   the   used   search algorithm,   and   limit   the   number   of   nodes   for   which   to   be   displayed.   The   BFS   search   algorithm   will   begin   with   the starting   URL   and   process   all   links   from   the   page,   and   then   all   links   from   each   subsequent   page   until   the   node   limit has   been   reached.   The   DFS   algorithm   will   randomly   select   a   single   link   from   the   available   on   each   page   until   the node   limit   is   reached.   In   this   way,   the   BFS   representation   will   look   like   a   broad   tree   pattern   while   the   DFS   will   look more   like   a   random   path.   The   user   may   explore   the   trees   graphically   or   view   the   nodes   in   list   form   with   associated statistics.   The   user   may   also   enter   a   keyword   along   with   the   search   parameters   that   will   halt   the   search   and   display the   node   at   which   the   keyword   was   found.

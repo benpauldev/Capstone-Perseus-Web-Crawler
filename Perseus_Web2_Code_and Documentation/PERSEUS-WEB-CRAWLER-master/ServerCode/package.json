@@ -1,0 +1,26 @@
+{
+  "name": "Perseus-Crawler-Main",
+  "version": "1.0.0",
+  "description": "a web app for CS496",
+  "main": "mainServer.js",
+  "scripts": {
+    "start": "node mainServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OSU",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "bootstrap": "^4.0.0-beta.2",
+    "cookie-parser": "^1.4.3",
+    "cytoscape": "^3.2.5",
+    "express": "^4.13.2",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "forever": "^0.15.3",
+    "jquery": "^3.2.1",
+    "mysql": "^2.8.0",
+    "popper.js": "^1.12.6",
+    "request": "2.79.0"
+  }
+}

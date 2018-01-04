@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Test URL parser</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+        var user,pass;
+        $('#resulthere').append("<p>Answer will appear here</p>");
+        $("#submit").click(function(){
+          urlstring=$("#urlstring").val();
+          $.post("http://ec2-54-148-189-221.us-west-2.compute.amazonaws.com:3001/url-horseman",
+	    {urlstring: urlstring}, 
+            function(data){
+	      //$('#resulthere').append("test!");
+              console.log(data);
+	      $.each(data, function (i, item) {
+                $('#resulthere').append("<p>"+i+ ": " +item+"</p>");
+              });
+            }
+          );
+          
+        });
+      });
+    </script>
+    
+    <script>
+      $(document).ready(function(){
+        var user,pass;
+        $('#resulthere2').append("<p>Answer will appear here</p>");
+        $("#submit2").click(function(){
+          urlstring=$("#urlstring").val();
+          
+          //$.post("http://ec2-54-148-189-221.us-west-2.compute.amazonaws.com:3001/url-horseman",
+          $.post("http://localhost3001/url2",
+	        {urlstring: urlstring}, 
+          function(data){
+	      //$('#resulthere').append("test!");
+              console.log(data);
+	      $.each(data, function (i, item) {
+                $('#resulthere2').append("<p>"+i+ ": " +item+"</p>");
+              });
+            }
+          );
+          
+        });
+      });
+    </script>
+    
+  </head>
+  <body>
+    <h1>Enter a URL to test URL parser</h1>
+    <input type="TEXT" id="urlstring" size="100"><br>
+    <input type="button" id="submit" value="Submit">
+    <div id="resulthere"></div>
+    
+    <h1>PhantomJS: Enter a URL to test URL parser</h1>
+    <input type="TEXT" id="urlstring" size="100"><br>
+    <input type="button" id="submit2" value="Submit2">
+    <div id="resulthere2"></div>
+    
+  </body>
+</html>
+

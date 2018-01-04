@@ -1,0 +1,30 @@
+{
+  "name": "cs467perseuswebv2_htmlparser",
+  "version": "1.0.0",
+  "description": "Capstone Project for html parser API",
+  "main": "htmlparser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hijirida/cs467PerseusWeb2_HTMLParser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hijirida/cs467PerseusWeb2_HTMLParser/issues"
+  },
+  "homepage": "https://github.com/hijirida/cs467PerseusWeb2_HTMLParser#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "jsdom": "^11.3.0",
+    "node-horseman": "^3.3.0",
+    "node-phantom": "^0.2.5",
+    "phantom": "^4.0.5",
+    "request": "^2.83.0"
+  }
+}

@@ -1,0 +1,47 @@
+ <body>
+      <div class='container-fluid'>
+        <div class='row'>
+          <div class='col-md-8' style='padding: 20px;'>
+            <div>
+              <p>
+                This is a d3 refocusable tree built off mbostocks's collapsable tree. The basis code is under public license.
+                </p>
+              <p>
+                Click a node to zoom on it and it's adjacent nodes. Click on whitespace to see parent adjacencies. 
+              </p>
+              <p>
+                Zoooming is also functional though touchy as of now. (Mouse must be over node to zoom.) 
+              </p>
+              <p>
+                Graph is populated with JSON test data. Can be populated with URL information as needed. 
+              </p>
+            </div>
+          </div>
+          <div class='col-md-2'>
+            &nbsp;
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-mid-12'>
+            <div id='list'>
+              <div class='row'>
+                <div class='col-md-2'></div>
+                <div class='col-md-8'>
+                  <div class='row'>
+                    <div class='col-md-8'>
+                      <div id='focus' style='color:gray;height:1000px;'>
+                        <div id='vis'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="/scripts/graph.js"></script>
+  </body>
